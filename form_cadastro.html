@@ -1,142 +1,157 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo_cadastro.css">
     <title>Cadastro de Clientes</title>
 </head>
 <body>
 
     <header>
-        <div class="bloco_logo_cadastro">
-            <a href="http://www.americanas.com" target="blank"><img src="lojas-americanas.png" alt="logo" width="150" height="80" /></a>
+        <div>
+            <a class="link_logo" href="http://www.americanas.com" target="blank">americanas</a>
         </div>
     </header>
 
-    <h1>criar seu cadastro</h1>
-    </br>
+    <section class="descricao_topo">
+        <h1>criar seu cadastro</h1>
 
-    <h4>veja seus pedidos de forma fácil, compre mais rápido e tenha uma experiência personalizada</h4>
-    <p><span>*</span>campos obrigatórios</p>
+        <h4>veja seus pedidos de forma fácil, compre mais rápido e tenha uma experiência personalizada</h4>
+        <p class="campos_obrigatorios"><span class="asterisco">*</span>campos obrigatórios</p>
+    </section>
 
     <!--Inicio do formulario. Utilizado br para separar linhas, quando utilizarmos o css os br serão retirados.
         Coloquei a label e o input detro de uma label para facilitar a experiência do usuario,
          assim clicando em qualquer lugar do texto vai selecionar a caixa de texto-->
+    <section class="alinhamento_formulario">   
+        <section class="conteinar_cadastro">
+            <form method="post" action="">
+                <div class="conteiner_nome">
+                    <label>
+                        <label for="nome" class="titulo_input"><span class="asterisco">*</span>nome completo</label>
+                        <div class="input_nome">
+                            <input type="text" name="nome" id="nome" class="nome" />
+                        </div> 
+                    </label>
+                </div>
 
-    <section class="conteinar_cadastro">
-        <form method="post" action="">
-            <div class="conteiner_nome">
-                <label>
-                    <label for="nome">Nome Completo</label> </br>
-                    <input type="text" name="nome" id="nome" class="nome" />
-                </label>
-            </div></br>
+
+
+                <div class="conteiner_sexo">
+                    <label>
+                        <label for="sexo" class="titulo_input"><span class="asterisco">*</span>gênero</label>
+                        <span class="titulo_input">pra gente te conhecer um pouco melhor :)</span>
+                        <input type="radio" name="sexo" id="sexo_feminino" />feminino
+                        <input type="radio" name="sexo" id="sexo_masculino" />masculino
+                        <input type="radio" name="sexo" id="sexo_nao_informar" />não informar
+                    </label>
+                </div>
+                
+
+                <!--Na data utilizei um input text conforme orientação. O input data pode funcionar de jeitos diferentes em cada SO-->
+                <div class="conteiner_data">
+                    <label>
+                        <label for="data" class="titulo_input"><span class="asterisco">*</span>data de nascimento</label>
+                        <span class="titulo_input">necessário identificar a maioridade, no formato DD/MM/AAAA</span>
+                        <div class="input_data">
+                            <input type="text" name="data" id="data" class="data" placeholder="__/__/____" />
+                        </div>
+                    </label>
+                </div>
 
 
 
-            <div class="conteiner_sexo">
-                <label>
-                    <label for="sexo"><span>*</span>gênero</label></br>
-                    <span>pra gente te conhecer um pouco melhor :)</span></br>
-                    <input type="radio" name="sexo" id="sexo" />feminino
-                    <input type="radio" name="sexo" id="sexo" />masculino
-                    <input type="radio" name="sexo" id="sexo" />não informar
-                </label>
-            </div></br>
+                <div class="conteiner_cpf">
+                    <label>
+                        <label for="cpf" class="titulo_input"><span class="asterisco">*</span>CPF</label>
+                        <span class="titulo_input">necessário para emissão de notas fiscais</span>
+                        <div class="input_cpf">
+                            <input type="text" name="cpf" id="cpf" class="cpf" placeholder="___-___-___-__" />
+                        </div>
+                    </label>
+                </div>
+
+
+                <p class="link_pessoa_juridica"><a href="" >é pessoa juridica? conheça a americanas empresas</a></p>
+
             
+                
+                <div class="conteiner_telefone">
+                    <label>
+                        <label for="telefone" class="titulo_input"><span class="asterico">*</span>telefone</label>
+                        <span class="titulo_input">caso a gente precise entrar em contato sobre seus pedidos</span>
+                        <div class="input_telefone">
+                            <input type="tel" name="telefone" id="telefone" class="telefone" placeholder="(__) _____-____" />
+                        </div>    
+                    </label>
+                </div>
 
-            <!--Na data utilizei um input text conforme orientação. O input data pode funcionar de jeitos diferente em cada SO-->
-            <div class="conteiner_data">
-                <label>
-                    <label for="data"><span>*</span>data de nascimento</label></br>
-                    <span>necessário identificar a maioridade, no formato DD/MM/AAAA</span></br>
-                    <input type="text" name="data" id="data" class="data" placeholder="__/__/____" />
-                </label>
-            </div></br>
-
-
-
-            <div class="conteiner_cpf">
-            <label>
-                <label for="cpf"><span>*</span>CPF</label></br>
-                <span>necessário para emissão de notas fiscais</span></br>
-                <input type="text" name="cpf" id="cpf" class="cpf" placeholder="___-___-___-__" />
-            </label></br>
-            </div>
-
-
-            <a href="" class="link_pessoa_juridica">é pessoa juridica? conheça a americanas empresas</a></br></br>
-
-           
             
-            <div class="conteiner_tel">
-                <label>
-                    <label for="telefone"><span>*</span>telefone</label></br>
-                    <span>caso a gente precise entrar em contato sobre seus pedidos</span></br>    
-                    <input type="tel" name="telefone" id="telefone" class="telefone" placeholder="(__) _____-____" />
-                </label></br>
-            </div>
-
-           
-            
-            <div class="conteiner_notificacao">
-                <label for="check_notificacao">
-                    <input type="checkbox" name="check_notificacao" id="check_notificacao" class="check_notificacao" />
-                    <span>receber notificações por whatsapp</span>
-                </label>
-            </div></br>
+                
+                <div class="conteiner_notificacao">
+                    <label for="check_notificacao">
+                        <input type="checkbox" name="check_notificacao" id="check_notificacao" class="check_notificacao" />
+                        <span>receber notificações por whatsapp</span>
+                    </label>
+                </div>
 
 
 
-            <div class="conteiner_email">
-                <label>
-                    <label for="email"><span>*</span>e-mail</label></br>
-                    <input type="email" name="email" id="email" class="email" /></br>                      
-                </label>
-            </div></br>
+                <div class="conteiner_email">
+                    <label>
+                        <label for="email" class="titulo_input"><span class="asterisco">*</span>e-mail</label>
+                        <div class="input_email">
+                            <input type="email" name="email" id="email" class="email" />                      
+                        </div>
+                    </label>
+                </div>
 
 
 
-            <div class="conteiner_chek_email">
-                <label>
-                    <input type="checkbox" name="check_email" id="check_email" class="check_email" />
-                    <span> receber e-mails profissionais</span>
-                </label>   
-            </div></br>
+                <div class="conteiner_check_email">
+                    <label>
+                        <input type="checkbox" name="check_email" id="check_email" class="check_email" />
+                        <span>receber e-mails profissionais</span>
+                    </label>   
+                </div>
 
 
 
-            <div class="conteiner_senha">
-                <label>
-                    <label for="senha"><span>*</span>senha</label></br>
-                    <span>precisa ter entre 6 e 20 caracteres</span></br>
-                    <input type="password" name="senha" id="senha" class="senha" minlength="6" maxlength="20" /> 
-                </label>
-            </div></br>
+                <div class="conteiner_senha">
+                    <label>
+                        <label for="senha" class="titulo_input"><span class="asterisco">*</span>senha</label>
+                        <span class="titulo_input">precisa ter entre 6 e 20 caracteres</span>
+                        <div class="input_senha">
+                            <input type="password" name="senha" id="senha" class="senha" minlength="6" maxlength="20" />
+                        </div>
+                    </label>
+                </div>
 
 
 
-            <div class="conteiner_check_compartilhar">
-                <label>
-                    <input type="checkbox" name="check_compartilhar" id="check_compartihar" class="check_compartilhar" />
-                    <span>compartilhar meus dados com parceiros para ter conteúdos personalizados, veja <a href="http://">como funciona.</a></span>
-                </label>
-            </div></br>
+                <div class="conteiner_check_compartilhar">
+                    <label>
+                        <input type="checkbox" name="check_compartilhar" id="check_compartihar" class="check_compartilhar" />
+                        <span class="descricao_check_compartilhar">compartilhar meus dados com parceiros para ter conteúdos personalizados, veja <a href="http://">como funciona.</a></span>
+                    </label>
+                </div>
 
 
 
-            <div class="conteiner_botao">
-                <input type="submit" value="criar seu cadastro" class="btn_cadastro" id="btn_cadastro" />
-            </div>
+                <div class="conteiner_botao">
+                    <input type="submit" value="criar seu cadastro" class="btn_cadastro" id="btn_cadastro" />
+                </div>
 
 
-        </form>
+            </form>
+        </section>
     </section>
 
 
-    <p class="p_privacidade">Não se preocupe, nosso site é seguro! Ao criar seu cadastro, você concorda com a nossa <a href="politica_privacidade.html">Politica de Privacidade</a> </p>
+    <p class="p_privacidade">Não se preocupe, nosso site é seguro! Ao criar seu cadastro, você concorda com a nossa <a href="politica_privacidade.html"><strong>Politica de Privacidade</strong></a> </p>
 
-    <p class="p_login">Já tem cadastro? <a href="form_login.html">entrar</a></p>
+    <p class="p_login">Já tem cadastro? <a href="form_login.html"><strong>entrar</strong></a></p>
 </body>
 </html>
